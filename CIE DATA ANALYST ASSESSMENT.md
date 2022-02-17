@@ -1,6 +1,6 @@
-# tsb
+# CIE DATA ANALYST ASSESSMENT 
 
-## Name  Madhu Prasath Srinivasan
+## Name:  Madhu Prasath Srinivasan
 
 The following queries have been written in postgresql. I used db fiddle to create table, insert given data and to execute the SQL .  
 
