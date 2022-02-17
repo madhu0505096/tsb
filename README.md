@@ -15,7 +15,8 @@ SELECT * FROM tsb.Contractual_Condition where lower("Attribute") like '%track%'
 
 ![image](https://user-images.githubusercontent.com/78327987/154588262-a636a88a-f55d-434a-8153-722038e2f36c.png)
 
- 
+ ![image](https://user-images.githubusercontent.com/78327987/154590105-3f1d872a-437e-4d4a-aa63-ebd5a7f306a3.png)
+
 
 The ‘like’ operator is case-sensitive so as of now we are not aware whether the word ‘Tracker’ would always have uppercase ‘T’ or something else so the column attribute is converted to lowercase which enables the query to give intended results no matter how tracker is stored in the database.
 
