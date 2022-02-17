@@ -2,7 +2,86 @@
 
 ## Name:  Madhu Prasath Srinivasan
 
-The following queries have been written in postgresql (version 13). I used db !fiddle[https://www.db-fiddle.com/] to create table, insert given data and to execute the SQL .  
+The following queries have been written in postgresql (version 13). I used db [fiddle](https://www.db-fiddle.com/) to create table, insert given data and to execute the SQL . 
+
+PLease find the schema below.
+```
+CREATE SCHEMA tsb;
+SET search_path = tsb;
+
+CREATE TABLE Contractual_Condition (
+  "Cond_ID" int,
+  "Attribute" varchar(70)
+  
+);
+
+INSERT INTO Contractual_Condition
+  ("Cond_ID", "Attribute")
+VALUES
+  (1, 'Right to a Tracker'),
+  (2, 'Right to a Variable'),
+  (3, 'Initial Discount Tracker rate: ECB+ 1% for first year'),
+  (4, 'Initial Discount Tracker rate: ECB+ 1% for first 2 years'),
+  (5, 'Initial Fixed Interest Rate of 3% for 2 years');
+  
+  
+  CREATE TABLE Acc_cond_rel
+  ("Acc_no" INT ,
+   "Cond_id" INT);
+   
+   INSERT INTO Acc_cond_rel
+   ("Acc_no","Cond_id")
+   values
+    (123,1),
+	(123,5),
+	(456,1),
+	(456,3),
+	(789,2),
+	(789,4),
+	(321,5);
+    
+   CREATE TABLE Product_Switch
+ ("Acc_no" SMALLINT,
+  "Acc_open_date"  DATE,
+  "Switch_date" DATE,
+  "Pre_switch_prod_id" SMALLINT,
+  "Post_switch_prod_id" SMALLINT);
+  
+  INSERT INTO Product_Switch 
+  ("Acc_no", "Acc_open_date", "Switch_date", "Pre_switch_prod_id", "Post_switch_prod_id")
+VALUES
+(456,'01/05/2006','01/05/2007',1,4),
+(789,'01/06/2006','01/06/2008',2,3),
+(321,'01/07/2006','01/07/2008',4,6),
+(123,'01/08/2006','01/08/2008',4,3),
+(789,'01/06/2006','01/06/2009',3,1);
+
+
+CREATE TABLE Product (
+  "Prod_id" SMALLINT,
+  "Rate_type" VARCHAR(20),
+  "Fixed_Rate" VARCHAR(5),
+  "Tracker_Margin" VARCHAR(5),
+  "Term_years" SMALLINT
+);
+
+INSERT INTO Product
+  ("Prod_id", "Rate_type", "Fixed_Rate", "Tracker_Margin", "Term_years")
+VALUES
+(1,'Tracker',NULL,'1%',	1),
+
+(2,'Tracker',NULL,'1%',2),
+
+(3,'Tracker',NULL,'2%',NULL),
+
+(4,'Fixed','3%',NULL,2),
+
+(5,	'Fixed','4%',NULL,3),
+
+(6,	'Variable',NULL,NULL,NULL);
+
+
+```
 
 
 ___1. Find the ID of any Conditions which grant a right to a Tracker. (For clarity, this includes Initial Discount Tracker conditions.)
