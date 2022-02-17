@@ -4,7 +4,7 @@
 
 The following queries have been written in postgresql (version 13). I used db [fiddle](https://www.db-fiddle.com/) to create table, insert given data and to execute the SQL . 
 
-PLease find the schema below.
+Please find the schema below.
 ```
 CREATE SCHEMA tsb;
 SET search_path = tsb;
