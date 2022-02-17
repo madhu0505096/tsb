@@ -1,11 +1,19 @@
 # tsb
 
-Name  Madhu Prasath Srinivasan
+## Name  Madhu Prasath Srinivasan
 
-The following queries have been written in postgresql. I used db fiddle to create table, insert given data and to execute the SQL .
-1. Find the ID of any Conditions which grant a right to a Tracker. (For clarity, this includes Initial Discount Tracker conditions.)
+The following queries have been written in postgresql. I used db fiddle to create table, insert given data and to execute the SQL .  
+
+___1. Find the ID of any Conditions which grant a right to a Tracker. (For clarity, this includes Initial Discount Tracker conditions.)
 The table “Contractual_Condition” has the condition id and the details pertaining to a tracker.
- So, “like” operator can be used to find all the conditions which have the word tracker in it.
+ So, “like” operator can be used to find all the conditions which have the word tracker in it.___
+
+```
+SELECT * FROM tsb.Contractual_Condition where lower("Attribute") like '%track%'
+```
+
+
+![image](https://user-images.githubusercontent.com/78327987/154588262-a636a88a-f55d-434a-8153-722038e2f36c.png)
 
  
 
