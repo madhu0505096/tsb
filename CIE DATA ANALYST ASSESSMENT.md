@@ -2,7 +2,8 @@
 
 ## Name:  Madhu Prasath Srinivasan
 
-The following queries have been written in postgresql. I used db fiddle to create table, insert given data and to execute the SQL .  
+The following queries have been written in postgresql (version 13). I used db !fiddle[https://www.db-fiddle.com/] to create table, insert given data and to execute the SQL .  
+
 
 ___1. Find the ID of any Conditions which grant a right to a Tracker. (For clarity, this includes Initial Discount Tracker conditions.)
 The table “Contractual_Condition” has the condition id and the details pertaining to a tracker.
