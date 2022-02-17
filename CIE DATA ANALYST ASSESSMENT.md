@@ -121,15 +121,11 @@ where lower(Contractual_Condition."Attribute") like '%tracker%';
 
 As we can see there are duplicate accounts in order to get only the unique accounts we can use distinct but the above results helps us to know the account number 456 had different trackers in a given point of time.  
 
-___3. How many accounts ever switched to a Tracker rate type (whether or not they had any right to a Tracker)?__  
+__3. How many accounts ever switched to a Tracker rate type (whether or not they had any right to a Tracker)?__  
 
 From looking at the data in the product switch table we can infer that if one account switches to a tracker more than once the same account will be recorded more than once. Example Account number 789.
 
 The following SQL gives all the accounts which have ever switched to a tracker type,  
-![image](https://user-images.githubusercontent.com/78327987/154589248-d25dd9c8-b645-4a58-b978-516af622cf1c.png)
-![image](https://user-images.githubusercontent.com/78327987/154589267-5b85c70b-f9fe-4de5-b392-2cde48ac6e79.png)
- 
-As you can see Account number 789 is recorded twice as the account had switched twice. So in order to exclude these repeated accounts we will be using distinct to find the unique number of accounts which have ever switched to a tracker.
 
 ```
 SELECT *
@@ -140,6 +136,7 @@ where "Post_switch_prod_id" in
 ```
 ![image](https://user-images.githubusercontent.com/78327987/154589488-d7540cad-8d6f-4555-ab72-a8d8e4002e0f.png)
 
+As you can see Account number 789 is recorded twice as the account had switched twice. So in order to exclude these repeated accounts we will be using distinct to find the unique number of accounts which have ever switched to a tracker.
 ```
 SELECT count(distinct PRODUCT_SWITCH."Acc_no")
 FROM
