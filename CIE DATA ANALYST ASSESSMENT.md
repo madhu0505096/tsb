@@ -146,8 +146,8 @@ where "Post_switch_prod_id" in
 ```
 ![image](https://user-images.githubusercontent.com/78327987/154589470-209da11c-c0c1-4c00-a9b2-75eefa0eb931.png)
 
-___4. Which accounts had a right to a Tracker (including Initial Discount Tracker conditions), but never switched to a Tracker?
-This can be found out either through sub-queries or joins.___ 
+___4. Which accounts had a right to a Tracker (including Initial Discount Tracker conditions), but never switched to a Tracker?__  
+
 This can be found out either through sub-queries or joins.  
 Below describes solution using sub-queries.
 ```
